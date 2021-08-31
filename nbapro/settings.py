@@ -21,6 +21,14 @@ USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 ROBOTSTXT_OBEY = False
 LOG_LEVEL = 'ERROR'
 
+#import os
+#IMAGES_URLS_FILED = 'img_url'  #要保存的字段，即item中的图片地址字段
+
+#project_dir = os.path.abspath(os.path.dirname(__file__))
+#IMAGES_STORE = os.path.join(project_dir, 'images') 
+IMAGES_STORE = './images'
+
+#ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 200}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -65,8 +73,11 @@ LOG_LEVEL = 'ERROR'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'nbapro.pipelines.NbaproPipeline': 300,
+    'nbapro.pipelines.NbaImgDownloadPipeline': 300,
 }
+#ITEM_PIPELINES = {
+#    'nbapro.pipelines.NbaproPipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

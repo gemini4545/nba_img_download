@@ -13,7 +13,8 @@ class ImgDownloadSpider(scrapy.Spider):
         for n in range(0,20):
             try:
                 item['img_url'] = IMG_dic['IMG_{}'.format(str(n))]['img']['imgurl1000']['imgurl']
-                item['img_name'] = name_group + '_' + str(n)
+                #item['img_name'] = name_group + '_' + str(n)
+                item['img_name'] = name_group
                 yield item
             except:
                 break
