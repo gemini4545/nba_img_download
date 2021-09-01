@@ -17,3 +17,8 @@ Just run below command in your terminal:
 or, if you wanna save the result:
 
         scrapy crawl img_download >> result.log
+        
+## update
+now "it depends" is completed. when you run the script, the images will be download into your local drive ('path/project_dir/images'). You may also change it to wherever you like by modifing the setting.
+
+What you need to do is just `scrapy crawl img_download`  after cd to the project_dir.
